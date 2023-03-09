@@ -1,0 +1,98 @@
+﻿@{
+    ViewData["Title"] = "C# Test #1";
+}
+
+
+
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-12"><h4>Generales</h4></div>
+    </div>
+    <div class="row">
+        <div class="col-4">Cedula / Nombre / Pais</div>
+        <div class="col-8"><input type="text" /></div>
+        <div class="col-4">Documentos entregados</div>
+        <div class="col-8"><input type="checkbox" /> Seleccionar Todo</div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12 text-end">
+            <button type="button" class="text-white bg-danger float-right" data-bs-toggle="modal" data-bs-target="#ModalRegistro">Nuevo registro</button>
+            <button type="submit" class="text-white bg-success float-right">Buscar</button>
+        </div>
+    </div>
+
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#tab-activo">Activo</a>
+                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#tab-inactivo">Inactivo</a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="tab-activo" class="tab-pane fade active">
+                    <h3>HOME</h3>
+                    <p>Some content.</p>
+                </div>
+                <div id="tab-inactivo" class="tab-pane fade">
+                    <h3>Menu 1</h3>
+                    <p>Some content in menu 1.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modals -->
+<div class="modal fade" id="ModalRegistro" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Nuevo registro</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-6">
+                        <label>Nacionalidad</label>
+                        <select></select>
+                    </div>
+                    <div class="col-6">
+                        <label>Estatus</label>
+                        <div class="input-group">
+                            Inactivo <input type="checkbox" />
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <label>Cedula</label>
+                        <input type="text" />
+                    </div>
+                    <div class="col-4">
+                        <label>Nombre</label>
+                        <input type="text" />
+                    </div>
+                    <div class="col-4">
+                        <label>Apellido</label>
+                        <input type="text" />
+                    </div>
+
+                    <div class="col-12">
+                        <label>Direccion</label>
+                        <div>
+                            <textarea width="100%"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary bg-success">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
