@@ -6,13 +6,34 @@
 
 <div class="container">
     <div class="row mb-4">
-        <div class="col-12"><h4>Generales</h4></div>
+        <div class="col-12">
+            <div class="d-flex align-items-center">
+                <div>
+                    <i class="material-icons">settings</i>
+                </div>
+                <div>
+                    <h4 class="pl-3">Generales</h4>
+                </div>
+            </div>
+            <hr style="height:2px; width:100%; border-width:0; color:black; background-color:black">
+        </div>
     </div>
     <div class="row">
         <div class="col-4">Cedula / Nombre / Pais</div>
-        <div class="col-8"><input type="text" /></div>
+        <div class="col-8">
+            <div class="form-group">
+                <input type="text" class="form-control" />
+            </div>
+         </div>
         <div class="col-4">Documentos entregados</div>
-        <div class="col-8"><input type="checkbox" /> Seleccionar Todo</div>
+        <div class="col-8">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Seleccionar todos
+                </label>
+            </div>
+        </div>
     </div>
     <div class="row mt-4">
         <div class="col-12 text-end">
@@ -57,34 +78,46 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="row">
+                <div class="row mb-4">
                     <div class="col-6">
                         <label>Nacionalidad</label>
                         <select></select>
                     </div>
                     <div class="col-6">
                         <label>Estatus</label>
-                        <div class="input-group">
-                            Inactivo <input type="checkbox" />
+                        <div class="form-check">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Inactivo
+                            </label>
+                            <input class="form-check-input" type="checkbox" value="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label>Cedula</label>
+                            <input type="text" class="form-control" />
                         </div>
                     </div>
                     <div class="col-4">
-                        <label>Cedula</label>
-                        <input type="text" />
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input type="text" class="form-control" />
+                        </div>
                     </div>
                     <div class="col-4">
-                        <label>Nombre</label>
-                        <input type="text" />
+                        <div class="form-group">
+                            <label>Apellido</label>
+                            <input type="text" class="form-control" />
+                        </div>
                     </div>
-                    <div class="col-4">
-                        <label>Apellido</label>
-                        <input type="text" />
-                    </div>
-
+                </div>
+                <div class="row">
                     <div class="col-12">
-                        <label>Direccion</label>
-                        <div>
-                            <textarea width="100%"></textarea>
+                        <div class="form-group">
+                            <label>Direccion</label>
+                            <textarea class="form-control"rows="3"></textarea>
                         </div>
                     </div>
                 </div>

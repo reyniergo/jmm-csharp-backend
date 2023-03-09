@@ -28,5 +28,24 @@ namespace CSHARP_TEST1.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+        // ACCIONES
+        public IActionResult GetClientes() { 
+        
+            return View();
+        }
+
+        public IActionResult PostCliente()
+        {
+
+            return View();
+        }
+
+        public IActionResult PutCliente()
+        {
+
+            return View();
+        }
     }
 }
