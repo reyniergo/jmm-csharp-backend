@@ -1,122 +1,216 @@
 ﻿@{
-    ViewData["Title"] = "C# Test #1";
+	ViewData["Title"] = "C# Test #1";
 }
 
 
 
 <div class="container">
-    <div class="row mb-4">
-        <div class="col-12">
-            <div class="d-flex align-items-center">
-                <div>
-                    <i class="material-icons">settings</i>
-                </div>
-                <div>
-                    <h4 class="pl-3">Generales</h4>
-                </div>
-            </div>
+	<div class="row mb-4">
+		<div class="col-12">
+			<div class="d-flex align-items-center">
+				<div>
+					<i class="material-icons">settings</i>
+				</div>
+				<div>
+					<h4 class="pl-3">Generales</h4>
+				</div>
+			</div>
 
-            <!-- Dividor -->
-            <hr style="height:2px; width:100%; border-width:0; color:black; background-color:black">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-4">Cedula / Nombre / Pais</div>
-        <div class="col-8">
-            <div class="form-group">
-                <input type="text" class="form-control" />
-            </div>
-         </div>
-        <div class="col-4">Documentos entregados</div>
-        <div class="col-8">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="">
-                <label class="form-check-label" for="flexCheckDefault">
-                    Seleccionar todos
-                </label>
-            </div>
-        </div>
-    </div>
-    <div class="row mt-4">
-        <div class="col-12 text-end">
-            <button type="button" class="text-white bg-danger float-right" data-bs-toggle="modal" data-bs-target="#ModalRegistro">Nuevo registro</button>
-            <button type="submit" class="text-white bg-success float-right">Buscar</button>
-        </div>
-    </div>
+			<!-- Dividor -->
+			<hr style="height:2px; width:100%; border-width:0; color:black; background-color:black">
+		</div>
+	</div>
+	<div class="row mb-3">
+		<div class="col-4">Cedula / Nombre / Pais</div>
+		<div class="col-8">
+			<div class="form-group">
+				<input type="text" class="form-control" />
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-4">Documentos entregados</div>
+		<div class="col-8">
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" value="">
+				<label class="form-check-label" for="flexCheckDefault">
+					Seleccionar todos
+				</label>
+			</div>
+
+			<div class="overflow-auto p-0 mb-0 mb-md-0 me-md-0 bg-light" height="20px" style="max-width: 260px; max-height: 100px;">
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="">
+					<label class="form-check-label" for="flexCheckDefault">
+						Opcion #1
+					</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="">
+					<label class="form-check-label" for="flexCheckDefault">
+						Opcion #2
+					</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="">
+					<label class="form-check-label" for="flexCheckDefault">
+						Opcion #1
+					</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="">
+					<label class="form-check-label" for="flexCheckDefault">
+						Opcion #1
+					</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="">
+					<label class="form-check-label" for="flexCheckDefault">
+						Opcion #2
+					</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="">
+					<label class="form-check-label" for="flexCheckDefault">
+						Opcion #1
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row mt-4">
+		<div class="col-12 text-end">
+			<button type="button" class="text-white bg-danger float-right" data-bs-toggle="modal" data-bs-target="#ModalRegistro">Nuevo registro</button>
+			<button type="submit" class="text-white bg-success float-right">Buscar</button>
+		</div>
+	</div>
 
 
-    <div class="row mt-4">
-        <nav>
-            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                <button class="nav-link active" id="nav-activo-tab" data-bs-toggle="tab" data-bs-target="#nav-activo" type="button" role="tab" aria-controls="nav-activo" aria-selected="true">Activo</button>
-                <button class="nav-link" id="nav-inactivo-tab" data-bs-toggle="tab" data-bs-target="#nav-inactivo" type="button" role="tab" aria-controls="nav-inactivo" aria-selected="false">Inactivo</button>
-            </div>
-        </nav>
-        <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="nav-activo" role="tabpanel" aria-labelledby="nav-activo-tab">Tab1</div>
-            <div class="tab-pane fade" id="nav-inactivo" role="tabpanel" aria-labelledby="nav-inactivo-tab">Tab2</div>
-        </div>
-    </div>
+	<div class="row mt-4">
+		<div class="col-12">
+			<nav>
+				<div class="nav nav-tabs" id="nav-tab" role="tablist">
+					<button class="nav-link active" id="nav-activo-tab" data-bs-toggle="tab" data-bs-target="#nav-activo" type="button" role="tab" aria-controls="nav-activo" aria-selected="true">Activo</button>
+					<button class="nav-link" id="nav-inactivo-tab" data-bs-toggle="tab" data-bs-target="#nav-inactivo" type="button" role="tab" aria-controls="nav-inactivo" aria-selected="false">Inactivo</button>
+				</div>
+			</nav>
+			<div class="tab-content" id="nav-tabContent">
+				<div class="tab-pane fade show active" id="nav-activo" role="tabpanel" aria-labelledby="nav-activo-tab">Tab1</div>
+				<div class="tab-pane fade" id="nav-inactivo" role="tabpanel" aria-labelledby="nav-inactivo-tab">Tab2</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 
 <!-- Modals -->
 <div class="modal fade" id="ModalRegistro" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Nuevo registro</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="row mb-4">
-                    <div class="col-6">
-                        <label>Nacionalidad</label>
-                        <select></select>
-                    </div>
-                    <div class="col-6">
-                        <label>Estatus</label>
-                        <div class="form-check">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Inactivo
-                            </label>
-                            <input class="form-check-input" type="checkbox" value="">
-                        </div>
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <div class="col-4">
-                        <div class="form-group">
-                            <label>Cedula</label>
-                            <input type="text" class="form-control" />
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="form-group">
-                            <label>Nombre</label>
-                            <input type="text" class="form-control" />
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="form-group">
-                            <label>Apellido</label>
-                            <input type="text" class="form-control" />
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="form-group">
-                            <label>Direccion</label>
-                            <textarea class="form-control"rows="3"></textarea>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary bg-success">Guardar</button>
-            </div>
-        </div>
-    </div>
+	<div class="modal-dialog modal-lg modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Nuevo registro</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<div class="row mb-4">
+					<div class="col-6">
+						<label>Nacionalidad</label>
+						<select></select>
+					</div>
+					<div class="col-6">
+						<label>Estatus</label>
+						<div class="form-check">
+							<label class="form-check-label" for="flexCheckDefault">
+								Inactivo
+							</label>
+							<input class="form-check-input" type="checkbox" value="">
+						</div>
+					</div>
+				</div>
+
+
+				<div class="row mb-4">
+					<div class="col-4">
+						<div class="form-group">
+							<label>Cedula</label>
+							<input type="text" class="form-control" />
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="form-group">
+							<label>Nombre</label>
+							<input type="text" class="form-control" />
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="form-group">
+							<label>Apellido</label>
+							<input type="text" class="form-control" />
+						</div>
+					</div>
+				</div>
+
+				<div class="row mb-4">
+					<div class="col-6">
+						<label>Marcar los documentos entregados por el cliente</label>
+					</div>
+					<div class="col-6">
+						<div class="overflow-auto p-0 mb-0 mb-md-0 me-md-0 bg-light" height="20px" style="max-width: 260px; max-height: 100px;">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="">
+								<label class="form-check-label" for="flexCheckDefault">
+									Opcion #1
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="">
+								<label class="form-check-label" for="flexCheckDefault">
+									Opcion #2
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="">
+								<label class="form-check-label" for="flexCheckDefault">
+									Opcion #1
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="">
+								<label class="form-check-label" for="flexCheckDefault">
+									Opcion #1
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="">
+								<label class="form-check-label" for="flexCheckDefault">
+									Opcion #2
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="">
+								<label class="form-check-label" for="flexCheckDefault">
+									Opcion #1
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="row">
+					<div class="col-12">
+						<div class="form-group">
+							<label>Direccion</label>
+							<textarea class="form-control" rows="3"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+				<button type="button" class="btn btn-primary bg-success">Guardar</button>
+			</div>
+		</div>
+	</div>
 </div>
