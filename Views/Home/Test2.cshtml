@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Numero par e impar";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div class="mt-2">
+    <label>Input #1:</label>
+    <input type="text" id="num1" />
+</div>
+
+<div class="mt-2">
+    <label>Input #2:</label>
+    <input type="text" id="num2" />
+</div>
+
+<div class="mt-2">
+    <button type="button" onclick="VerificarNumbers()">Verificar</button>
+</div>
+
+<script>
+    function VerificarNumbers() {
+        let num1 = parseInt($('#num1').val());
+        let num2 = parseInt($('#num2').val());
+
+        // Campo #1
+        if (num1 % 2 == 0) {
+            alert("El primero input con el " + num1 + " es un número par.");
+        } else {
+            alert("El primero input con el " + num1 + " es un número impar.");
+        }
+
+        // Campo #2
+        if (num2 % 2 == 0) {
+            alert("El segundo input con el " + num2 + " es un número par.");
+        } else {
+            alert("El segundo input con el " + num2 + " es un número impar.");
+        }
+    }
+</script>

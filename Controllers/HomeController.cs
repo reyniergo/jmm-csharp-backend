@@ -18,7 +18,7 @@ namespace CSHARP_TEST1.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Test2()
         {
             return View();
         }
