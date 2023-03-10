@@ -2,7 +2,7 @@
 
 namespace CSHARP_TEST1.Models
 {
-    [Keyless]
+    // [Keyless]
     public class ClienteDocumentos
     {
         public int CodCliente { get; set; }

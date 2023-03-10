@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace CSHARP_TEST1.Models
 {
@@ -9,6 +7,6 @@ namespace CSHARP_TEST1.Models
         [Key]
         public int CodDoc { get; set; }
         public string Titulo { get; set; }
-        public string Inactivo { get; set; }
+        public bool Inactivo { get; set; }
     }
 }

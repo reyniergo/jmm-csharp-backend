@@ -1,7 +1,8 @@
-﻿@{
+﻿@model CSHARP_TEST1.Models.Test1;
+
+@{
 	ViewData["Title"] = "Formulario - Test #1";
 }
-
 
 
 <div class="container">
@@ -40,48 +41,25 @@
 			</div>
 
 			<div class="overflow-auto p-0 mb-0 mb-md-0 me-md-0 bg-light" height="20px" style="max-width: 260px; max-height: 100px;">
-				<div class="form-check">
-					<input class="form-check-input" type="checkbox" value="">
-					<label class="form-check-label" for="flexCheckDefault">
-						Opcion #1
-					</label>
-				</div>
-				<div class="form-check">
-					<input class="form-check-input" type="checkbox" value="">
-					<label class="form-check-label" for="flexCheckDefault">
-						Opcion #2
-					</label>
-				</div>
-				<div class="form-check">
-					<input class="form-check-input" type="checkbox" value="">
-					<label class="form-check-label" for="flexCheckDefault">
-						Opcion #1
-					</label>
-				</div>
-				<div class="form-check">
-					<input class="form-check-input" type="checkbox" value="">
-					<label class="form-check-label" for="flexCheckDefault">
-						Opcion #1
-					</label>
-				</div>
-				<div class="form-check">
-					<input class="form-check-input" type="checkbox" value="">
-					<label class="form-check-label" for="flexCheckDefault">
-						Opcion #2
-					</label>
-				</div>
-				<div class="form-check">
-					<input class="form-check-input" type="checkbox" value="">
-					<label class="form-check-label" for="flexCheckDefault">
-						Opcion #1
-					</label>
-				</div>
+
+				@foreach (var item in Model.List_Documento)
+				{
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="@item.CodDoc">
+						<label class="form-check-label" for="flexCheckDefault">
+							@item.Titulo
+						</label>
+					</div>
+				}
+
 			</div>
+
+			
 		</div>
 	</div>
 	<div class="row mt-4">
 		<div class="col-12 text-end">
-			<button type="button" id="BtnNuevoRegistro" class="text-white bg-danger float-right" data-bs-toggle="modal" data-bs-target="#ModalRegistro">Nuevo registro</button>
+			<button type="button" id="BtnNuevoRegistro" class="text-white bg-danger float-right">Nuevo registro</button>
 			<button type="submit" class="text-white bg-success float-right">Buscar</button>
 		</div>
 	</div>
@@ -105,124 +83,97 @@
 
 
 <!-- Modals -->
-<div class="modal fade" id="ModalRegistro" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-dialog modal-lg modal-dialog-centered">
-		<div class="modal-content">
-
-			<form id="FormularioRegistroCliente">
-				<input type="hidden" id="CodCliente" name="CodCliente" value="" />
-				<input type="hidden" id="TipoOperacion" name="TipoOperacion" value="" />
-
-
-				<div class="modal-header">
-					<h5 class="modal-title" id="modal-title">Nuevo registro222</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>
-				<div class="modal-body">
-					<div class="row mb-4">
-						<div class="col-6">
-							<label>Nacionalidad</label>
-							<select class="form-select" aria-label=".form-select-sm example">
-								<option selected>Panama</option>
-								<option value="1">Panama</option>
-								<option value="2">Panama</option>
-								<option value="3">Panama</option>
-							</select>
-						</div>
-						<div class="col-6">
-							<label>Estatus</label>
-							<div class="form-check mt-2">
-								<label class="form-check-label" for="flexCheckDefault">
-									Inactivo
-								</label>
-								<input class="form-check-input" type="checkbox" value="">
-							</div>
-						</div>
-					</div>
-
-
-					<div class="row mb-4">
-						<div class="col-4">
-							<div class="form-group">
-								<label>Cedula</label>
-								<input type="text" class="form-control" />
-							</div>
-						</div>
-						<div class="col-4">
-							<div class="form-group">
-								<label>Nombre</label>
-								<input type="text" class="form-control" />
-							</div>
-						</div>
-						<div class="col-4">
-							<div class="form-group">
-								<label>Apellido</label>
-								<input type="text" class="form-control" />
-							</div>
-						</div>
-					</div>
-
-					<div class="row mb-4">
-						<div class="col-6">
-							<label>Marcar los documentos entregados por el cliente</label>
-						</div>
-						<div class="col-6">
-							<div class="overflow-auto p-0 mb-0 mb-md-0 me-md-0 bg-light" height="20px" style="max-width: 260px; max-height: 100px;">
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="">
-									<label class="form-check-label" for="flexCheckDefault">
-										Opcion #1
-									</label>
-								</div>
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="">
-									<label class="form-check-label" for="flexCheckDefault">
-										Opcion #2
-									</label>
-								</div>
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="">
-									<label class="form-check-label" for="flexCheckDefault">
-										Opcion #1
-									</label>
-								</div>
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="">
-									<label class="form-check-label" for="flexCheckDefault">
-										Opcion #1
-									</label>
-								</div>
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="">
-									<label class="form-check-label" for="flexCheckDefault">
-										Opcion #2
-									</label>
-								</div>
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="">
-									<label class="form-check-label" for="flexCheckDefault">
-										Opcion #1
-									</label>
-								</div>
-							</div>
-						</div>
-					</div>
-
-
-					<div class="row">
-						<div class="col-12">
-							<div class="form-group">
-								<label>Direccion</label>
-								<textarea class="form-control" rows="3"></textarea>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-					<button type="button" id="GrabarRegistro" class="btn btn-primary bg-success">Guardar</button>
-				</div>
-			</form>
-		</div>
-	</div>
+<div class="modal fade" id="ModalContex" tabindex="-1" role="dialog" aria-hidden="true">
+	
 </div>
+
+@section Scripts {
+
+	<script>
+
+		// JQuery para TEST #1
+		$(document).ready(function () {
+
+			// Boton de crear nuevo registro
+			$(document).on("click", "#BtnNuevoRegistro", function(){
+
+				$.ajax({
+					url: "@Url.Action("ModalNuevo", "Home")",
+					type: "GET",
+					async: false,
+					success:  function(data){
+
+						document.getElementById("ModalContex").innerHTML = data;
+
+						$("#ModalContex").modal("show");
+					}
+				
+				});
+
+
+				// Limpiar todos los inputs del cliente
+				// $('#FormularioRegistroCliente :input').val('');
+				$("#FormularioRegistroCliente").trigger("reset");
+
+				// Editar titulo modal
+				$("#modal-title").empty();
+				$("#modal-title").append("Nuevo registro");
+
+				// Editar campos
+				$("#TipoOperacion").val("CREAR");
+			});
+
+			
+
+			// Boton de editar registro por ID
+			$(".BtnEditarRegistro").click(function () {
+
+				// Limpiar todos los inputs del cliente
+				// $('#FormularioRegistroCliente :input').val('');
+				$("#FormularioRegistroCliente").trigger("reset");
+
+				// Editar titulo modal
+				$("#modal-title").empty();
+				$("#modal-title").append("Editar registro");
+
+				// Editar campos
+				$("#TipoOperacion").val("EDITAR");
+				let CodCliente = $(this).data("cod-cliente");
+				$("#CodCliente").val(CodCliente);
+
+			});
+
+
+			// Boton de Grabar registro - modal
+			$(document).on("submit", "#FormularioRegistroCliente", function (e) {
+				console.log("entro");
+				e.preventDefault();
+
+				
+
+				var ValData = $(this).serialize();
+
+				// alert(ValData);
+
+				$.ajax({
+					url: "@Url.Action("ClienteNuevoEditar","Home")",
+					type: "POST",
+					dataType: 'json',
+					contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+					data: ValData,
+					success: function(data){
+
+						if (data.Result){
+
+							$("#ModalContex").modal("show");
+
+							alert("Se creo el registro");
+						}
+
+					}
+
+				});
+			});
+		});
+	</script>
+}

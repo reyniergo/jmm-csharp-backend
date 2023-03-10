@@ -19,5 +19,17 @@ namespace CSHARP_TEST1.Data
         public DbSet<CSHARP_TEST1.Models.TipoDocumentos> TipoDocumentos { get; set; }
 
         public DbSet<CSHARP_TEST1.Models.Pais> Pais { get; set; }
-    }
+
+		public DbSet<CSHARP_TEST1.Models.ClienteDocumentos> ClienteDocumentos { get; set; }
+
+		protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Cliente>()
+                .ToTable("Clientes");
+
+            modelBuilder.Entity<ClienteDocumentos>().HasKey( x => new { x.CodCliente, x.CodDoc } );
+
+		}
+
+	}
 }
