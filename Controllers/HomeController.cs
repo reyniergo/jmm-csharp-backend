@@ -146,18 +146,20 @@ namespace CSHARP_TEST1.Controllers
 
             List<ClienteDocumentos> ListaclienteDocumentos = new List<ClienteDocumentos>();
 
-            foreach (var item in model.CodDocumento)
-            {
-				ClienteDocumentos clienteDocumentos = new ClienteDocumentos();
-                clienteDocumentos.CodCliente = cliente.CodCliente;
-                clienteDocumentos.CodDoc = item;
-                ListaclienteDocumentos.Add(clienteDocumentos);
+            if (model.CodDocumento != null ) { 
+                foreach (var item in model.CodDocumento)
+                {
+				    ClienteDocumentos clienteDocumentos = new ClienteDocumentos();
+                    clienteDocumentos.CodCliente = cliente.CodCliente;
+                    clienteDocumentos.CodDoc = item;
+                    ListaclienteDocumentos.Add(clienteDocumentos);
+			    }
+
+			    _TEST1Context.ClienteDocumentos.AddRange(ListaclienteDocumentos); 
+                _TEST1Context.SaveChanges();
 			}
 
-			_TEST1Context.ClienteDocumentos.AddRange(ListaclienteDocumentos); 
-            _TEST1Context.SaveChanges();
-
-            JsonSerializerOptions options = new JsonSerializerOptions();
+			JsonSerializerOptions options = new JsonSerializerOptions();
             options.PropertyNameCaseInsensitive = true;
 
 			return Json(new { Result = true }, options);
