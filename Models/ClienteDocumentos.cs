@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace CSHARP_TEST1.Models
 {
+    [Keyless]
     public class ClienteDocumentos
     {
         public int CodCliente { get; set; }

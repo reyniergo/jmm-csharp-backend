@@ -13,11 +13,13 @@ namespace CSHARP_TEST1.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        // Prueba #1
+        public IActionResult Test1()
         {
             return View();
         }
 
+        // Prueba #2
         public IActionResult Test2()
         {
             return View();

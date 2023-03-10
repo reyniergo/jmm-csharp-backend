@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace CSHARP_TEST1.Models
 {
     public class Cliente
     {
+        [Key]
         public int CodCliente { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
