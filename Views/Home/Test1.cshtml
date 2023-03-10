@@ -6,6 +6,7 @@
 
 
 <div class="container">
+	<form id="FormBuscador">
 	<div class="row mt-3 mb-3">
 		<div class="col-12">
 			<div class="d-flex align-items-center">
@@ -25,7 +26,7 @@
 		<div class="col-4">Cedula / Nombre / Pais</div>
 		<div class="col-8">
 			<div class="form-group">
-				<input type="text" class="form-control" />
+				<input type="text" class="form-control" asp-for="NombreApellidoCedula" />
 			</div>
 		</div>
 	</div>
@@ -45,7 +46,7 @@
 				@foreach (var item in Model.List_Documento)
 				{
 					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="@item.CodDoc">
+						<input class="form-check-input" id="BusDoc" name="BusDoc" type="checkbox" value="@item.CodDoc">
 						<label class="form-check-label" for="flexCheckDefault">
 							@item.Titulo
 						</label>
@@ -63,22 +64,14 @@
 			<button type="submit" class="text-white bg-success float-right">Buscar</button>
 		</div>
 	</div>
-
-
+	</form>
+	<!-- Tablas de resultados -->
 	<div class="row mt-4">
-		<div class="col-12">
-			<nav>
-				<div class="nav nav-tabs" id="nav-tab" role="tablist">
-					<button class="nav-link active" id="nav-activo-tab" data-bs-toggle="tab" data-bs-target="#nav-activo" type="button" role="tab" aria-controls="nav-activo" aria-selected="true">Activo</button>
-					<button class="nav-link" id="nav-inactivo-tab" data-bs-toggle="tab" data-bs-target="#nav-inactivo" type="button" role="tab" aria-controls="nav-inactivo" aria-selected="false">Inactivo</button>
-				</div>
-			</nav>
-			<div class="tab-content" id="nav-tabContent">
-				<div class="tab-pane fade show active" id="nav-activo" role="tabpanel" aria-labelledby="nav-activo-tab">Tab1</div>
-				<div class="tab-pane fade" id="nav-inactivo" role="tabpanel" aria-labelledby="nav-inactivo-tab">Tab2</div>
-			</div>
+		<div class="col-12" id="Contenedor-Tabla">
+			
 		</div>
 	</div>
+	
 </div>
 
 
@@ -93,6 +86,47 @@
 
 		// JQuery para TEST #1
 		$(document).ready(function () {
+
+			function CargarTabla (){
+
+				$.ajax({
+					url: "@Url.Action("TablaCliente", "Home")",
+					type: "GET",
+					async: false,
+					success: function (data) {
+
+						document.getElementById("Contenedor-Tabla").innerHTML = data;
+
+						
+					}
+
+				});
+
+			}
+
+			CargarTabla();
+
+			$(document).on("submit", "#FormBuscador", function(e){
+
+				console.log("entro");
+				e.preventDefault();
+
+				var ValData = $(this).serialize();
+
+				$.ajax({
+					url: "@Url.Action("TablaCliente", "Home")",
+					type: "GET",
+					async: false,
+					data: ValData,
+					success: function (data) {
+
+						document.getElementById("Contenedor-Tabla").innerHTML = data;
+
+
+					}
+
+				});
+			});
 
 			// Boton de crear nuevo registro
 			$(document).on("click", "#BtnNuevoRegistro", function(){
@@ -126,7 +160,23 @@
 			
 
 			// Boton de editar registro por ID
-			$(".BtnEditarRegistro").click(function () {
+			$(document).on("click", ".BtnEditarRegistro", function (e) {
+
+				var ClienteCod = e.target.getAttribute("data-cliente-cod");
+
+				$.ajax({
+					url: "@Url.Action("ModalNuevo", "Home")",
+					type: "GET",
+					async: false,
+					data: { ClienteCod: ClienteCod },
+					success: function (data) {
+
+						document.getElementById("ModalContex").innerHTML = data;
+
+						$("#ModalContex").modal("show");
+					}
+
+				});
 
 				// Limpiar todos los inputs del cliente
 				// $('#FormularioRegistroCliente :input').val('');
@@ -165,9 +215,11 @@
 
 						if (data.Result){
 
-							$("#ModalContex").modal("show");
+							$("#ModalContex").modal("hide");
 
 							alert("Se creo el registro");
+
+							CargarTabla();
 						}
 
 					}

@@ -24,10 +24,21 @@ namespace CSHARP_TEST1.Data
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Cliente>()
-                .ToTable("Clientes");
+            modelBuilder.Entity<Cliente>(option =>
+            {
+                option.ToTable("Clientes");
+				
+			});
 
-            modelBuilder.Entity<ClienteDocumentos>().HasKey( x => new { x.CodCliente, x.CodDoc } );
+
+			modelBuilder.Entity<ClienteDocumentos>(option =>
+            {
+				option.HasKey(x => new { x.CodCliente, x.CodDoc });
+               
+
+            });
+
+            
 
 		}
 

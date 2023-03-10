@@ -7,5 +7,6 @@ namespace CSHARP_TEST1.Models
     {
         public int CodCliente { get; set; }
         public int CodDoc { get; set; }
-    }
+		// public Cliente Cliente { get; set; }
+	}
 }

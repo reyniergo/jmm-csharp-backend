@@ -6,6 +6,7 @@ namespace CSHARP_TEST1.Models
 	{
 		public List<SelectListItem> ListPais { get; set; }	
 		public List<TipoDocumentos> ListaTipoDocumentos { get; set; }
+		public int ClienteCod { get; set; }
 		public bool Inactivo { get; set; }
 		public int CodPais { get; set; }
 		public int[] CodDocumento { get; set; }

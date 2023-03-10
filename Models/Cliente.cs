@@ -12,5 +12,6 @@ namespace CSHARP_TEST1.Models
         public int CodNacionalidad { get; set; }
         public string Direccion { get; set; }
         public bool Inactivo { get; set; }
+        // public ICollection<ClienteDocumentos> ClienteDocumentos { get; set; }
     }
 }

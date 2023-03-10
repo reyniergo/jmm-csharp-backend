@@ -1,0 +1,58 @@
+﻿@model CSHARP_TEST1.Models.Test1
+
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+		<button class="nav-link active" id="nav-activo-tab" data-bs-toggle="tab" data-bs-target="#nav-activo" type="button" role="tab" aria-controls="nav-activo" aria-selected="true">Activo</button>
+		<button class="nav-link" id="nav-inactivo-tab" data-bs-toggle="tab" data-bs-target="#nav-inactivo" type="button" role="tab" aria-controls="nav-inactivo" aria-selected="false">Inactivo</button>
+	</div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+	<!-- Resultado activo-->
+	<div class="tab-pane fade show active" id="nav-activo" role="tabpanel" aria-labelledby="nav-activo-tab">
+
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Nombre</th>
+					<th>Cedula</th>
+					<th>Accion</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model.ListaCliente.Where(x => x.Inactivo == false))
+				{
+					<tr>
+						<td>@item.Nombre @item.Apellido</td>
+						<td>@item.Cedula</td>
+						<td><button class="BtnEditarRegistro" data-cliente-cod="@item.CodCliente">Editar</button></td>
+					</tr>
+				}
+			</tbody>
+		</table>
+
+	</div>
+
+	<!-- Resultado inactivos -->
+	<div class="tab-pane fade" id="nav-inactivo" role="tabpanel" aria-labelledby="nav-inactivo-tab">
+
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Nombre</th>
+					<th>Cedula</th>
+					<th>Accion</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model.ListaCliente.Where(x => x.Inactivo == true))
+				{
+					<tr>
+						<td>@item.Nombre @item.Apellido</td>
+						<td>@item.Cedula</td>
+						<td><button class="BtnEditarRegistro" data-cliente-cod="@item.CodCliente">Editar</button></td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</div>
