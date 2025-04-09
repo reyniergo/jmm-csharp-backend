@@ -1,4 +1,4 @@
-# 🚀 C# Web Service - ASP.NET Core Web API
+# 🚀 JMM - Backend en C# + .NET Core
 
 Este proyecto es un Web Service desarrollado con **ASP.NET Core Web API**. Proporciona una base sólida para construir APIs RESTful en C# utilizando las mejores prácticas del ecosistema .NET.
 
